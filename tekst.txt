@@ -1,10 +1,12 @@
 var fs = require('fs');
+var colors = require('colors');
 
-fs.readFile('./tekst.txt', function(err, data) {
-    console.log(data);
-});
+fs.readdir('./', function(err, files) {
+    if(err) throw err;
+    console.log(files);
 
-fs.writeFile('./tekst.txt', 'Tekst, który zapiszemy w pliku tekst.txt', function(err) {
-    if (err) throw err; // jeśli pojawi się błąd, wyrzuć wyjątek
-    console.log('Zapisano!');
-});
+    fs.writeFile('tekst.txt', files, function(err){
+        if (err) throw err;
+        console.log('The file has been write in new katalog!' .record.txt);
+    });
+}); 
